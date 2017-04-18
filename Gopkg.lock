@@ -1,0 +1,7 @@
+memo = "fc81d1db4faa9ce6a72a3ae60a4be03e0390746a1d350b1c005101db210e989f"
+
+[[projects]]
+  name = "github.com/jackc/pgx"
+  packages = ["."]
+  revision = "97c01fb52451c10e686fb847ad390338bf1799ae"
+  version = "v2.10.0"

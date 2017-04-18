@@ -1,3 +1,6 @@
+# My additions
+vendor/
+*sqlgen.go
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a
