@@ -1,4 +1,4 @@
-package main
+package sqlcodegen
 
 import (
 	"bufio"

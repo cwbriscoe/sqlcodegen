@@ -1,16 +1,16 @@
-package main
+package sqlcodegen
 
 import (
 	"fmt"
 	"os"
+	"testing"
 
-	"github.com/cwbriscoe/sqlcodegen/test"
 	"github.com/jackc/pgx"
 )
 
-var conn *pgx.Conn
+//var conn *pgx.Conn
 
-func main() {
+func TestMain(m *testing.M) {
 	var err error
 
 	dbcfg := &pgx.ConnConfig{
@@ -26,14 +26,13 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Unable to connection to database: %v\n", err)
 		os.Exit(1)
 	}
+}
 
-	test.RunTests(conn)
-	/*
-		test := &test.Sqlgentest{}
-		test.in.parm1 = "0000118532"
-		err = test.fetch1(conn)
-		if err != nil {
-			fmt.Println(err)
-		}
-		fmt.Println(test.out) */
+func TestSingleSelect(t *testing.T) {
+	test := &sqlgentest{}
+	test.in.parm1 = "0000118532"
+	err := test.fetch1(conn)
+	if err != nil {
+		t.Error(err)
+	}
 }
